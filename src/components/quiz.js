@@ -27,7 +27,7 @@ export default class Quiz extends Component {
 
   render() {
     // console.log(questions)
-    console.log(this.props.quiz)
+    // console.log(this.props.quiz)
     return (
       <div>
         <Question

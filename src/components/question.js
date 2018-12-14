@@ -11,75 +11,65 @@ export default class Question extends Component {
     super(props)
     this.state = {
       question: questions[0],
-      // questionNumber: this.props.questionNumber
       questionNumber: 0,
-      questions: questions
+      questions: questions,
+      resultQuestions: []
     }
   }
 
-  // componentDidMount() {
-  //   this.setQuestion()
-  // }
-
   updateQuestion = () => {
-    // let newQuestionNumber = this.state.questionNumber + 1
     this.setState((state) => {
-      // questionNumber: newQuestionNumber
       return {
         questionNumber: state.questionNumber + 1,
         question: state.questions[state.questionNumber + 1]
       }
     })
-    console.log(`question questionNumber is ${this.state.questionNumber}`)
-    // this.setQuestion()
   }
 
-  // setQuestion = () => {
-  //   // let newQuestionNumber = this.state.questionNumber + 1
-  //   // this.setState({
-  //   //   questionNumber: newQuestionNumber
-  //   // }).then(
-  //     this.setState({
-  //       question: this.state.questions[this.state.questionNumber]
-  //     })
-  //   // )
-  // }
+  checkAnswer = (index, question) => {
+    let answer = index + 1
+    if (answer === question.correct) {
+      question.result = 'Correct!'
+    } else {
+      question.result = 'Incorrect'
+    }
+    console.log(question)
+    this.setState((state) => {
+      return {resultQuestions: [...state.resultQuestions, question]}
+    })
+  }
 
-  selectAnswer = (event, index) => {
+  selectAnswer = (event, index, question) => {
     event.preventDefault()
-    // this.incrementQuestionNumber().then(this.setQuestion())
+    this.checkAnswer(index, question)
     this.updateQuestion()
-    // this.setQuestion()
-    // this.props.selectAnswer(event, index)
   }
 
   render() {
-    console.log(this.state.question)
     if (this.state.questionNumber < this.state.questions.length) {
       return (
         <div>
-          <div>QUESTION COMPONENT</div>
           <div>{Parser(this.state.question.question)}</div>
           <div>
             Choices:
-            <ul>
+            <div>
               {this.state.question.answers.map((answer, index) => (
-                <li
+                <div
                   key = {answer}
                   onClick = { event => {
-                    this.selectAnswer(event, index)
+                    this.selectAnswer(event, index, this.state.question)
                   }}
                 >
                   {answer}
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       )
     } else {
       return (
-        <Results />
+        <Results results = { this.state.resultQuestions } />
       )
     }
   }
