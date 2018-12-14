@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import questions from '../Britannica-Quiz-Exercise/questions.json'
+// import questions from '../Britannica-Quiz-Exercise/questions.json'
 import Question from './question'
 
 export default class Quiz extends Component {
@@ -18,24 +18,23 @@ export default class Quiz extends Component {
   //   console.log(this.state.questionNumber)
   // }
 
-  selectAnswer = (event, index) => {
-    event.preventDefault()
-    console.log(event)
-    console.log(index)
-    // this.incrementQuestionNumber();
-  }
+  // selectAnswer = (event, index) => {
+  //   event.preventDefault()
+  //   console.log(event)
+  //   console.log(index)
+  //   // this.incrementQuestionNumber();
+  // }
 
   render() {
-    console.log(questions)
+    // console.log(questions)
     console.log(this.props.quiz)
     return (
       <div>
-        <div>QUIZ!!!!!!!!!!!!</div>
         <Question
-          questions = { questions }
+          // questions = { questions }
           // question = { questions[this.state.questionNumber] }
           // questionNumber = { this.state.questionNumber }
-          selectAnswer = { this.selectAnswer }
+          // selectAnswer = { this.selectAnswer }
         />
       </div>
     )

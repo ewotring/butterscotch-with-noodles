@@ -2,21 +2,24 @@ import React, { Component } from 'react'
 import Parser from 'html-react-parser'
 // Is html-react-parser safer than dangerouslySetInnerHTML?
 // I will assume that the JSON is from my server and is safe, for this project.
+import Results from './results'
+import questions from '../Britannica-Quiz-Exercise/questions.json'
+
 
 export default class Question extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      question: this.props.questions[0],
+      question: questions[0],
       // questionNumber: this.props.questionNumber
       questionNumber: 0,
-      questions: this.props.questions
+      questions: questions
     }
   }
 
-  componentDidMount() {
-    this.setQuestion()
-  }
+  // componentDidMount() {
+  //   this.setQuestion()
+  // }
 
   updateQuestion = () => {
     // let newQuestionNumber = this.state.questionNumber + 1
@@ -31,23 +34,23 @@ export default class Question extends Component {
     // this.setQuestion()
   }
 
-  setQuestion = () => {
-    // let newQuestionNumber = this.state.questionNumber + 1
-    // this.setState({
-    //   questionNumber: newQuestionNumber
-    // }).then(
-      this.setState({
-        question: this.state.questions[this.state.questionNumber]
-      })
-    // )
-  }
+  // setQuestion = () => {
+  //   // let newQuestionNumber = this.state.questionNumber + 1
+  //   // this.setState({
+  //   //   questionNumber: newQuestionNumber
+  //   // }).then(
+  //     this.setState({
+  //       question: this.state.questions[this.state.questionNumber]
+  //     })
+  //   // )
+  // }
 
   selectAnswer = (event, index) => {
     event.preventDefault()
     // this.incrementQuestionNumber().then(this.setQuestion())
     this.updateQuestion()
     // this.setQuestion()
-    this.props.selectAnswer(event, index)
+    // this.props.selectAnswer(event, index)
   }
 
   render() {
@@ -76,7 +79,7 @@ export default class Question extends Component {
       )
     } else {
       return (
-        <div>Your score is blank!</div>
+        <Results />
       )
     }
   }
