@@ -9,13 +9,19 @@ export default class Results extends Component {
         {this.props.results.map(result => (
           <div key = {result.question}>
             <div>
-              {Parser(result.question)}
+              Question: {Parser(result.question)}
             </div>
             <div>
-              {result.result}
+              Your answer: {result.userAnswer}
             </div>
             <div>
-              {Parser(result.explanation)}
+              Correct answer: {result.correctAnswer}
+            </div>
+            <div>
+              Result: {result.result}
+            </div>
+            <div>
+              Explanation: {Parser(result.explanation)}
             </div>
           </div>
         ))}
