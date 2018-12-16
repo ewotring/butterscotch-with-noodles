@@ -4,7 +4,6 @@ import '../styles/results.scss'
 
 export default class Results extends Component {
   render() {
-    console.log(this.props.results)
     return (
       <div className='results-body results-container'>
       <div className='restart-button-container'>
@@ -43,8 +42,3 @@ export default class Results extends Component {
     )
   }
 }
-
-/*
-Want to add click to return to landing page and reset quiz
-some visual indicator of correct or incorrect for each result
-*/

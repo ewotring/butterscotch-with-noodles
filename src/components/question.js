@@ -35,7 +35,6 @@ export default class Question extends Component {
     }
     question.userAnswer = question.answers[index]
     question.correctAnswer = question.answers[question.correct - 1]
-    console.log(question)
     this.setState((state) => {
       return {resultQuestions: [...state.resultQuestions, question]}
     })
