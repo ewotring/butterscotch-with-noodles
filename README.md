@@ -7,8 +7,6 @@ conditionals in the render method. I realize that it could negatively affect pag
 but I have directly linked my <img> tag to the URL for the image.
 
 Functionality wants:
-In results, want to add click to return to landing page and reset quiz results
-In quiz, want to add click to restart quiz
 In question, want to use timer from JSON
 
 

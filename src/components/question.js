@@ -64,7 +64,7 @@ export default class Question extends Component {
         <div>
           <div className='body question'>{Parser(this.state.question.question)}</div>
           <div>
-            Choices:
+            <div className='body'>{this.state.question.instructions}</div>
             <div>
               {this.state.question.answers.map((answer, index) => (
                 <button
@@ -79,7 +79,7 @@ export default class Question extends Component {
               ))}
             </div>
           </div>
-          <div className='body quiz-instruction'>{this.state.question.instructions}</div>
+          <div className='body quiz-instruction'>{this.state.question.restartInstructions}</div>
           <img
             src={this.props.quiz.thumbnail.filePath}
             alt={this.props.quiz.thumbnail.altText}
@@ -89,7 +89,10 @@ export default class Question extends Component {
       )
     } else {
       return (
-        <Results results = { this.state.resultQuestions } />
+        <Results
+          results = { this.state.resultQuestions }
+          returnToLanding = {this.returnToLanding}
+        />
       )
     }
   }

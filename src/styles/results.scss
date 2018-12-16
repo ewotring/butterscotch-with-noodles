@@ -1,0 +1,19 @@
+.item-body {
+  padding: 10px;
+}
+
+.result-item,
+.restart-button-container {
+  margin: 10px;
+  background-color: rgb(188, 188, 188);
+  border-radius: 5px;
+  .restart-button {
+    margin: 10px;
+  }
+  &.correct {
+    border: solid 5px green;
+  }
+  &.incorrect {
+    border: solid 5px red;
+  }
+}

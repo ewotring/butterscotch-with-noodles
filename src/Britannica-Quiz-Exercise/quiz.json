@@ -3,7 +3,7 @@
     "type": "QUIZ",
     "title": "Comic Books: Fact or Fiction?",
     "description": "Take this Pop Culture True or False quiz at Encyclopedia Britannica to test your knowledge of Superman, Spider-Man, and other comic book heroes.",
-    "instruction": "Click in the image to begin the quiz.",
+    "instruction": "Select the image to begin the quiz. You will cycle through the questions and then you will see your results.",
     "url": "/quiz/comic-books-fact-or-fiction",
     "thumbnail": {
         "id": 178408,
