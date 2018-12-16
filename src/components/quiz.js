@@ -35,6 +35,7 @@ export default class Quiz extends Component {
           // question = { questions[this.state.questionNumber] }
           // questionNumber = { this.state.questionNumber }
           // selectAnswer = { this.selectAnswer }
+          quiz = {this.props.quiz}
         />
       </div>
     )

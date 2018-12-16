@@ -30,3 +30,19 @@
     transform: rotate(360deg);
   }
 }
+
+.body {
+  margin: 10px;
+}
+
+.quiz-instruction {
+  font-weight: bold;
+}
+
+img {
+  &.landing-graphic {
+    cursor: pointer;
+    width: 50%;
+    margin: 10px;
+  }
+}

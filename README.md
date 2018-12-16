@@ -1,3 +1,18 @@
+DEV_NOTES:
+
+I attempted to implement an asynchronous fetch for the images, but querying the image resource
+resulted in an error due to a restriction by the same-origin policy. In response, I have left
+the fetch code in App.js, but it is commented out. I've done the same with the dependent
+conditionals in the render method. I realize that it could negatively affect page loading,
+but I have directly linked my <img> tag to the URL for the image.
+
+Functionality wants:
+In results, want to add click to return to landing page and reset quiz results
+In quiz, want to add click to restart quiz
+In question, want to use timer from JSON
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

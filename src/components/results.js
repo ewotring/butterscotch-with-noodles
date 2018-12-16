@@ -29,3 +29,7 @@ export default class Results extends Component {
     )
   }
 }
+
+/*
+Want to add click to return to landing page and reset quiz
+*/

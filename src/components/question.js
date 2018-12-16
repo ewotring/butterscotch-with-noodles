@@ -4,11 +4,11 @@ import Parser from 'html-react-parser'
 // I will assume that the JSON is from my server and is safe, for this project.
 import Results from './results'
 import questions from '../Britannica-Quiz-Exercise/questions.json'
-
+import '../styles/question.scss'
 
 export default class Question extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       question: questions[0],
       questionNumber: 0,
@@ -67,6 +67,10 @@ export default class Question extends Component {
               ))}
             </div>
           </div>
+          <img
+            src={this.props.quiz.thumbnail.filePath}
+            alt={this.props.quiz.thumbnail.altText}
+          />
         </div>
       )
     } else {
