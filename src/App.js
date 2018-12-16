@@ -49,7 +49,14 @@ class App extends Component {
     })
   }
 
+  returnToLanding = () => {
+    this.setState({
+      showQuiz: false
+    })
+  }
+
   render() {
+    console.log(this)
     document.title = quiz.browserTitle
     // const { error, imageIsLoaded, imageUrl } = this.state
     // console.log(error)
@@ -151,7 +158,10 @@ class App extends Component {
                 Learn React
               </a> */}
             </header>
-            <Quiz quiz = { quiz } />
+            <Quiz
+              quiz = { quiz }
+              returnToLanding = {this.returnToLanding}
+            />
           </div>
 
         )

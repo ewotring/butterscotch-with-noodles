@@ -47,29 +47,43 @@ export default class Question extends Component {
     this.updateQuestion()
   }
 
+  returnToLanding = event => {
+    event.preventDefault();
+    this.setState((state) => {
+      return {
+        questionNumber: 0,
+        question: state.questions[0]
+      }
+    })
+    this.props.returnToLanding()
+  }
+
   render() {
     if (this.state.questionNumber < this.state.questions.length) {
       return (
         <div>
-          <div>{Parser(this.state.question.question)}</div>
+          <div className='body question'>{Parser(this.state.question.question)}</div>
           <div>
             Choices:
             <div>
               {this.state.question.answers.map((answer, index) => (
-                <div
+                <button
+                  className=' body answer'
                   key = {answer}
                   onClick = { event => {
                     this.selectAnswer(event, index, this.state.question)
                   }}
                 >
                   {answer}
-                </div>
+                </button>
               ))}
             </div>
           </div>
+          <div className='body quiz-instruction'>{this.state.question.instructions}</div>
           <img
             src={this.props.quiz.thumbnail.filePath}
             alt={this.props.quiz.thumbnail.altText}
+            onClick={event => {this.returnToLanding(event)}}
           />
         </div>
       )

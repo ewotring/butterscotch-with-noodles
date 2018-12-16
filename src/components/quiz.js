@@ -28,6 +28,7 @@ export default class Quiz extends Component {
   render() {
     // console.log(questions)
     // console.log(this.props.quiz)
+    console.log(this.props)
     return (
       <div>
         <Question
@@ -36,6 +37,7 @@ export default class Quiz extends Component {
           // questionNumber = { this.state.questionNumber }
           // selectAnswer = { this.selectAnswer }
           quiz = {this.props.quiz}
+          returnToLanding = {this.props.returnToLanding}
         />
       </div>
     )

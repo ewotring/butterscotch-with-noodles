@@ -8,7 +8,8 @@
             "Fiction"
         ],
         "correct": 2,
-        "explanation": "Wolverine has sharp claws and is very resilient."
+        "explanation": "Wolverine has sharp claws and is very resilient.",
+        "instructions": "Click on the thumbnail to return to the start page to restart the quiz."
     },
     {
         "type": "TRUE_FALSE",
@@ -19,7 +20,8 @@
             "Fiction"
         ],
         "correct": 1,
-        "explanation": "Clark Kent was in love with Lana Lang. Then he went to Metropolis and fell in love with Lois Lane, the ace newspaper reporter."
+        "explanation": "Clark Kent was in love with Lana Lang. Then he went to Metropolis and fell in love with Lois Lane, the ace newspaper reporter.",
+        "instructions": "Click on the thumbnail to return to the start page to restart the quiz."
     },
     {
         "type": "TRUE_FALSE",
@@ -30,7 +32,8 @@
             "Fiction"
         ],
         "correct": 1,
-        "explanation": "Venom was one of many enemies Spider-Man faced."
+        "explanation": "Venom was one of many enemies Spider-Man faced.",
+        "instructions": "Click on the thumbnail to return to the start page to restart the quiz."
     },
     {
         "type": "TRUE_FALSE",
@@ -41,7 +44,8 @@
             "Fiction"
         ],
         "correct": 2,
-        "explanation": "Superman cannot be harmed by anything dangerous to ordinary humans. He can be weakened, however, by exposure to green kryptonite."
+        "explanation": "Superman cannot be harmed by anything dangerous to ordinary humans. He can be weakened, however, by exposure to green kryptonite.",
+        "instructions": "Click on the thumbnail to return to the start page to restart the quiz."
     },
     {
         "type": "TRUE_FALSE",
@@ -52,7 +56,8 @@
             "Fiction"
         ],
         "correct": 2,
-        "explanation": "Kryptonite is an invention of the creators of the <em>Superman</em> cartoon strip. It first appeared in the 1940s."
+        "explanation": "Kryptonite is an invention of the creators of the <em>Superman</em> cartoon strip. It first appeared in the 1940s.",
+        "instructions": "Click on the thumbnail to return to the start page to restart the quiz."
     },
     {
         "type": "TRUE_FALSE",
@@ -63,6 +68,7 @@
             "Fiction"
         ],
         "correct": 1,
-        "explanation": "Although called a superhero, the American comic book character Batman has no superhuman powers. Under his cowl, he is merely a rich man who has devoted his life to fighting crime."
+        "explanation": "Although called a superhero, the American comic book character Batman has no superhuman powers. Under his cowl, he is merely a rich man who has devoted his life to fighting crime.",
+        "instructions": "Click on the thumbnail to return to the start page to restart the quiz."
     }
 ]
