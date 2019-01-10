@@ -15,6 +15,7 @@ export default class Question extends Component {
       questions: questions,
       resultQuestions: []
     }
+    this.scorecounter = 0
   }
 
   updateQuestion = () => {
@@ -30,6 +31,7 @@ export default class Question extends Component {
     let answer = index + 1
     if (answer === question.correct) {
       question.result = 'Correct!'
+      this.scorecounter += 1
     } else {
       question.result = 'Incorrect'
     }
@@ -59,6 +61,38 @@ export default class Question extends Component {
 
   render() {
     if (this.state.questionNumber < this.state.questions.length) {
+      if (this.state.questionNumber === 0) {
+        return (
+          <div>
+            <div className='body question'>{Parser(this.state.question.question)}</div>
+            <div>
+              <div className='body'>{this.state.question.instructions}</div>
+              <div>
+                {this.state.question.answers.map((answer, index) => (
+                  <button
+                    className=' body answer'
+                    key={answer}
+                    onClick={event => {
+                      this.selectAnswer(event, index, this.state.question)
+                    }}
+                  >
+                    {answer}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className='body intermediate-results'>
+              The current score is {this.scorecounter} out of {this.state.questionNumber}
+            </div>
+            <div className='body quiz-instruction'>{this.state.question.restartInstructions}</div>
+            <img
+              src={this.props.quiz.thumbnail.filePath}
+              alt={this.props.quiz.thumbnail.altText}
+              onClick={event => { this.returnToLanding(event) }}
+            />
+          </div>
+        )
+      }
       return (
         <div>
           <div className='body question'>{Parser(this.state.question.question)}</div>
@@ -77,6 +111,12 @@ export default class Question extends Component {
                 </button>
               ))}
             </div>
+          </div>
+          <div className='body intermediate-results'>
+            The current score is {this.scorecounter} out of {this.state.questionNumber}
+          </div>
+          <div className='body previous-question-results'>
+            The answer to the previous question was {this.state.questions[this.state.questionNumber - 1].result}
           </div>
           <div className='body quiz-instruction'>{this.state.question.restartInstructions}</div>
           <img
